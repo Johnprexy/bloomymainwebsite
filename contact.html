@@ -1,0 +1,2226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Bloomy Technologies | Get in Touch</title>
+    <meta name="description" content="Contact Bloomy Technologies for course enrollment, career guidance, and tech training inquiries. Offices in USA and Lagos, Nigeria with expert support team.">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --secondary: #7c3aed;
+            --accent: #ec4899;
+            --dark: #0f172a;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-600: #475569;
+            --gray-900: #0f172a;
+            --white: #ffffff;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            --gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #ec4899 100%);
+            --gradient-hover: linear-gradient(135deg, #1d4ed8 0%, #6d28d9 50%, #db2777 100%);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --border-radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--gray-900);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gray-200);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            height: 70px;
+            transition: var(--transition);
+        }
+
+        .header.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo img {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-600);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            background: var(--gradient);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-hover);
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .nav-cta:hover::before {
+            left: 0;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            padding: 8px;
+            transition: var(--transition);
+        }
+
+        .mobile-menu span {
+            width: 20px;
+            height: 2px;
+            background: var(--gray-600);
+            transition: var(--transition);
+        }
+
+        .mobile-menu:hover span {
+            background: var(--primary);
+        }
+
+        /* Page Header with animated background */
+        .page-header {
+            background: var(--dark);
+            color: white;
+            padding: 140px 2rem 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            animation: slideGrid 20s linear infinite;
+        }
+
+        @keyframes slideGrid {
+            0% { transform: translateX(0) translateY(0); }
+            100% { transform: translateX(10px) translateY(10px); }
+        }
+
+        .page-header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .highlight {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb a:hover {
+            color: white;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInFromRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-xl);
+            border: 1px solid var(--gray-200);
+            animation: slideInFromLeft 0.8s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient);
+        }
+
+        .form-header {
+            margin-bottom: 2.5rem;
+        }
+
+        .form-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-header p {
+            color: var(--gray-600);
+            font-size: 1.1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid var(--gray-200);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: var(--transition);
+            font-family: inherit;
+            background: var(--gray-50);
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: white;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .submit-btn {
+            background: var(--gradient);
+            color: white;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-hover);
+            transition: var(--transition);
+            z-index: 1;
+        }
+
+        .submit-btn:hover::before {
+            left: 0;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .submit-btn span,
+        .submit-btn i {
+            position: relative;
+            z-index: 2;
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .submit-btn.loading::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            margin: -10px 0 0 -10px;
+            border: 2px solid transparent;
+            border-top: 2px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            z-index: 3;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .submit-btn.loading span,
+        .submit-btn.loading i {
+            opacity: 0;
+        }
+
+        /* Contact Information */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            animation: slideInFromRight 0.8s ease-out;
+        }
+
+        .info-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--gray-200);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient);
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .info-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-icon::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+            transform: rotate(45deg);
+            transition: var(--transition);
+            opacity: 0;
+        }
+
+        .info-card:hover .info-icon::before {
+            animation: shimmer 0.6s ease-out;
+        }
+
+        @keyframes shimmer {
+            0% {
+                opacity: 0;
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
+        }
+
+        .info-icon i {
+            color: white;
+            font-size: 1.5rem;
+            z-index: 2;
+            position: relative;
+        }
+
+        .info-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+
+        .info-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--gray-600);
+            transition: var(--transition);
+        }
+
+        .info-item:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .info-item i {
+            color: var(--primary);
+            width: 20px;
+            font-size: 1.1rem;
+        }
+
+        /* Success/Error Messages */
+        .message {
+            padding: 1rem 1.5rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1.5rem;
+            display: none;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            animation: slideInFromTop 0.3s ease-out;
+        }
+
+        @keyframes slideInFromTop {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message.show {
+            display: flex;
+        }
+
+        .success-message {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .error-message {
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--error);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+
+        /* Office Locations */
+        .locations-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--gray-50) 0%, rgba(37, 99, 235, 0.05) 100%);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .locations-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .location-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--gray-200);
+            transition: var(--transition);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .location-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .location-header {
+            background: var(--gradient);
+            color: white;
+            padding: 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .location-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: 20px 20px;
+            animation: movePattern 10s linear infinite;
+        }
+
+        @keyframes movePattern {
+            0% { transform: translateX(0) translateY(0); }
+            100% { transform: translateX(20px) translateY(20px); }
+        }
+
+        .location-flag {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .location-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .location-subtitle {
+            opacity: 0.9;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .location-content {
+            padding: 2.5rem;
+        }
+
+        .location-address {
+            margin-bottom: 2rem;
+        }
+
+        .address-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 1rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        .address-item i {
+            color: var(--primary);
+            margin-top: 4px;
+            width: 18px;
+            font-size: 1.1rem;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 20px;
+            background: var(--gray-50);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            text-decoration: none;
+            color: var(--gray-600);
+            border: 2px solid transparent;
+        }
+
+        .contact-method:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateX(8px);
+            border-color: var(--primary);
+        }
+
+        .contact-method i {
+            width: 20px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        /* Enhanced Map */
+        .location-map {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--gray-100) 0%, var(--gray-200) 100%);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-600);
+            font-weight: 500;
+            border: 2px dashed var(--gray-300);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .location-map:hover {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .location-map::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.1;
+            transition: var(--transition);
+        }
+
+        .location-map:hover::before {
+            opacity: 0.2;
+            transform: translate(-50%, -50%) scale(1.2);
+        }
+
+        .map-content {
+            text-align: center;
+            z-index: 2;
+            position: relative;
+        }
+
+        .map-content i {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        /* Quick Contact */
+        .quick-contact {
+            padding: 5rem 2rem;
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quick-contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="grad" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:rgba(255,255,255,0.1);stop-opacity:1" /><stop offset="100%" style="stop-color:rgba(255,255,255,0);stop-opacity:1" /></radialGradient></defs><circle cx="50" cy="50" r="30" fill="url(%23grad)"/></svg>');
+            background-size: 200px 200px;
+            animation: floatPattern 15s ease-in-out infinite;
+        }
+
+        @keyframes floatPattern {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .quick-contact-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .quick-contact h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .quick-contact p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 3rem;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .quick-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .quick-btn {
+            padding: 16px 32px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quick-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            transition: var(--transition);
+            z-index: 1;
+        }
+
+        .quick-btn:hover::before {
+            left: 0;
+        }
+
+        .quick-btn span,
+        .quick-btn i {
+            position: relative;
+            z-index: 2;
+        }
+
+        .quick-btn-primary {
+            background: var(--gradient);
+            color: white;
+        }
+
+        .quick-btn-primary::before {
+            background: var(--gradient-hover);
+        }
+
+        .quick-btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .quick-btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .quick-btn-secondary::before {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .quick-btn-secondary:hover {
+            transform: translateY(-3px);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        .quick-btn-whatsapp {
+            background: #25d366;
+            color: white;
+        }
+
+        .quick-btn-whatsapp::before {
+            background: #1aa553;
+        }
+
+        .quick-btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            background: #25d366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-xl);
+            text-decoration: none;
+            transition: var(--transition);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.15);
+            animation: none;
+        }
+
+        .whatsapp-float i {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .whatsapp-tooltip {
+            position: absolute;
+            bottom: 100%;
+            right: 0;
+            background: var(--dark);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            margin-bottom: 10px;
+        }
+
+        .whatsapp-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            right: 20px;
+            border: 5px solid transparent;
+            border-top-color: var(--dark);
+        }
+
+        .whatsapp-float:hover .whatsapp-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 2rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gradient);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            line-height: 1.8;
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            font-size: 1.1rem;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* Scroll to Top */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            z-index: 999;
+            background: var(--gradient);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+
+        .scroll-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Form Validation Styles */
+        .form-group.error .form-input,
+        .form-group.error .form-select,
+        .form-group.error .form-textarea {
+            border-color: var(--error);
+            background: rgba(239, 68, 68, 0.05);
+        }
+
+        .form-group.success .form-input,
+        .form-group.success .form-select,
+        .form-group.success .form-textarea {
+            border-color: var(--success);
+            background: rgba(16, 185, 129, 0.05);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        .form-group.error .error-text {
+            display: block;
+        }
+
+        /* Loading overlay */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.9);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .loading-overlay.show {
+            display: flex;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--gray-200);
+            border-top: 3px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .locations-grid {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .page-header {
+                padding: 120px 1rem 60px;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-section {
+                padding: 3rem 1rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .locations-section {
+                padding: 3rem 1rem;
+            }
+
+            .quick-contact {
+                padding: 3rem 1rem;
+            }
+
+            .quick-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .quick-btn {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .whatsapp-float {
+                bottom: 1rem;
+                right: 1rem;
+                width: 50px;
+                height: 50px;
+            }
+
+            .scroll-top {
+                bottom: 1rem;
+                left: 1rem;
+                width: 45px;
+                height: 45px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .contact-form {
+                padding: 2rem 1.5rem;
+            }
+
+            .info-card {
+                padding: 1.5rem;
+            }
+
+            .location-header {
+                padding: 1.5rem;
+            }
+
+            .location-content {
+                padding: 1.5rem;
+            }
+
+            .quick-contact h2 {
+                font-size: 2rem;
+            }
+
+            .locations-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .location-card {
+                min-width: unset;
+            }
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            /* Add dark mode styles if needed */
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            :root {
+                --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+                --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+                --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">
+    <img src="/bloomy logo.jpg" alt="Bloomy Technologies Logo">
+    <span>Bloomy Technologies</span>
+</a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="training.html">Training</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            
+            <a href="contact.html" class="nav-cta">Enroll Now</a>
+            
+            <div class="mobile-menu" id="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-content">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Contact Us</span>
+            </div>
+            <h1>Get In <span class="highlight">Touch</span></h1>
+            <p>Ready to transform your tech career? Contact our expert team for course enrollment, career guidance, and personalized learning paths tailored to your goals.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-grid">
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <div class="message success-message" id="successMessage">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.</span>
+                </div>
+                
+                <div class="message error-message" id="errorMessage">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <span>There was an error sending your message. Please try again or contact us directly.</span>
+                </div>
+                
+                <div class="form-header">
+                    <h2>Send Us a Message</h2>
+                    <p>Fill out the form below and our expert team will respond to you as soon as possible. We're here to help you succeed!</p>
+                </div>
+                
+                <form id="contactForm" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName" class="form-label">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" class="form-input" required>
+                            <div class="error-text">Please enter your first name</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName" class="form-label">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" class="form-input" required>
+                            <div class="error-text">Please enter your last name</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                            <div class="error-text">Please enter a valid email address</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" class="form-input" required>
+                            <div class="error-text">Please enter your phone number</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="course" class="form-label">Course of Interest</label>
+                        <select id="course" name="course" class="form-select">
+                            <option value="">Select a course</option>
+                            <option value="devops">DevOps & Cloud Computing</option>
+                            <option value="cybersecurity">Cybersecurity</option>
+                            <option value="data-science">Data Science & Analytics</option>
+                            <option value="web-development">Full-Stack Web Development</option>
+                            <option value="mobile-development">Mobile App Development</option>
+                            <option value="ui-ux">UI/UX Design</option>
+                            <option value="product-management">Product Management</option>
+                            <option value="product-design">Product Design</option>
+                            <option value="digital-marketing">Digital Marketing</option>
+                            <option value="linux">Linux System Administration</option>
+                            <option value="general">General Inquiry</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message *</label>
+                        <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your goals, questions, or how we can help you achieve your tech career dreams..." required></textarea>
+                        <div class="error-text">Please enter your message</div>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Send Message</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <div class="info-card">
+                    <div class="info-header">
+                        <div class="info-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3 class="info-title">Student Support</h3>
+                    </div>
+                    <div class="info-details">
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+234 (0) 800-BLOOMY-1</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>support@bloomytechnologies.com</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Fri: 8:00 AM - 6:00 PM (WAT)</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-comments"></i>
+                            <span>24/7 Live Chat Support</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-header">
+                        <div class="info-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="info-title">Admissions</h3>
+                    </div>
+                    <div class="info-details">
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+234 (0) 800-BLOOMY-2</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>admissions@bloomytechnologies.com</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp Support Available</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Free Consultation Sessions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-header">
+                        <div class="info-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3 class="info-title">Career Services</h3>
+                    </div>
+                    <div class="info-details">
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>careers@bloomytechnologies.com</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-user-tie"></i>
+                            <span>Job Placement Support</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-handshake"></i>
+                            <span>Industry Partnerships</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span>95% Job Placement Rate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Office Locations -->
+    <section class="locations-section">
+        <div class="section-header">
+            <h2>Our <span class="highlight">Locations</span></h2>
+            <p>Visit us at our state-of-the-art campuses in USA and Nigeria, equipped with cutting-edge technology and learning facilities</p>
+        </div>
+        
+        <div class="locations-grid">
+            <!-- USA Headquarters -->
+            <div class="location-card">
+                <div class="location-header">
+                    <div class="location-flag">🇺🇸</div>
+                    <h3 class="location-title">USA Headquarters</h3>
+                    <p class="location-subtitle">Our main campus and global headquarters</p>
+                </div>
+                
+                <div class="location-content">
+                    <div class="location-address">
+                        <div class="address-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Bloomy Technologies HQ</strong><br>
+                                1234 Innovation Drive<br>
+                                Silicon Valley, CA 94043<br>
+                                United States of America
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-methods">
+                        <a href="tel:+15551234567" class="contact-method">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-BLOOM</span>
+                        </a>
+                        <a href="mailto:usa@bloomytechnologies.com" class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <span>usa@bloomytechnologies.com</span>
+                        </a>
+                        <div class="contact-method">
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Fri: 9:00 AM - 6:00 PM (PST)</span>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-users"></i>
+                            <span>500+ Students Enrolled</span>
+                        </div>
+                    </div>
+                    
+                    <div class="location-map" onclick="openMap('usa')">
+                        <div class="map-content">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <div>View on Google Maps<br><small>Silicon Valley Campus</small></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nigeria Branch -->
+            <div class="location-card">
+                <div class="location-header">
+                    <div class="location-flag">🇳🇬</div>
+                    <h3 class="location-title">Nigeria Campus</h3>
+                    <p class="location-subtitle">Our African hub in Lagos</p>
+                </div>
+                
+                <div class="location-content">
+                    <div class="location-address">
+                        <div class="address-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Bloomy Technologies Nigeria</strong><br>
+                                54B Adeniyi Jones Ave. Ikeja, Lagos State<br>
+                                Nigeria
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-methods">
+                        <a href="tel:+2348001234567" class="contact-method">
+                            <i class="fas fa-phone"></i>
+                            <span>+234 913 464 4911</span>
+                        </a>
+                        <a href="mailto:nigeria@bloomytechnologies.com" class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <span>nigeria@bloomytechnologies.com</span>
+                        </a>
+                        <a href="#" class="contact-method" onclick="openWhatsApp('Nigeria Campus Contact')">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp: +234 913 464 4911</span>
+                        </a>
+                        <div class="contact-method">
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Fri: 8:00 AM - 6:00 PM (WAT)</span>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-users"></i>
+                            <span>1000+ Students Enrolled</span>
+                        </div>
+                    </div>
+                    
+                    <div class="location-map" onclick="openMap('nigeria')">
+                        <div class="map-content">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <div>View on Google Maps<br><small>Lagos Campus</small></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Contact -->
+    <section class="quick-contact">
+        <div class="quick-contact-content">
+            <h2>Need Immediate <span class="highlight">Assistance?</span></h2>
+            <p>Don't wait! Our admission counselors are standing by to help you choose the perfect tech career path. Get instant support through your preferred communication channel.</p>
+            
+            <div class="quick-buttons">
+                <a href="tel:+2348001234567" class="quick-btn quick-btn-primary">
+                    <i class="fas fa-phone"></i>
+                    <span>Call Now</span>
+                </a>
+                <a href="#" class="quick-btn quick-btn-whatsapp" onclick="openWhatsApp('Quick Contact')">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp Chat</span>
+                </a>
+                <a href="mailto:admissions@bloomytechnologies.com" class="quick-btn quick-btn-secondary">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email Us</span>
+                </a>
+                <a href="#" class="quick-btn quick-btn-secondary" onclick="scheduleConsultation()">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Schedule Consultation</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Float -->
+    <a href="#" class="whatsapp-float" onclick="openWhatsApp('Float Button')">
+        <i class="fab fa-whatsapp"></i>
+        <div class="whatsapp-tooltip">Chat with us on WhatsApp</div>
+    </a>
+
+    <!-- Scroll to Top -->
+    <a href="#" class="scroll-top" id="scrollTop">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Bloomy Technologies</h3>
+                <p>Leading tech training institute with campuses in USA and Nigeria. Transforming careers through world-class technology education since 2021.</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/bloomytechnologies_ikeja?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="training.html">Training Programs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Popular Courses</h3>
+                <ul>
+                    <li><a href="training.html#devops">DevOps & Cloud Computing</a></li>
+                    <li><a href="training.html#cybersecurity">Cybersecurity</a></li>
+                    <li><a href="training.html#data-science">Data Science & Analytics</a></li>
+                    <li><a href="training.html#web-dev">Web Development</a></li>
+                    <li><a href="training.html#mobile-dev">Mobile App Development</a></li>
+                    <li><a href="training.html#ui-ux">UI/UX Design</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Headquarters: USA</p>
+                <p><i class="fas fa-map-marker-alt"></i> Nigeria Branch: 54B Adeniyi Jones Ave. Ikeja, Lagos</p>
+                <p><i class="fas fa-phone"></i> +1 (513) 572 7116, +234 913 464 4911</p>
+                <p><i class="fas fa-envelope"></i> info@bloomy-technologies.com</p>
+                <p><i class="fab fa-whatsapp"></i> WhatsApp: +234 913 464 4911</p>
+                <p><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 6:00 PM</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Bloomy Technologies. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+                <a href="#">Accessibility</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced JavaScript functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Header scroll effect
+            const header = document.getElementById('header');
+            const scrollTop = document.getElementById('scrollTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                    scrollTop.classList.add('show');
+                } else {
+                    header.classList.remove('scrolled');
+                    scrollTop.classList.remove('show');
+                }
+            });
+
+            // Smooth scroll for scroll-to-top button
+            scrollTop.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Form handling
+            const contactForm = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+            const loadingOverlay = document.getElementById('loadingOverlay');
+
+            // Form validation
+            function validateForm() {
+                let isValid = true;
+                const formGroups = contactForm.querySelectorAll('.form-group');
+                
+                formGroups.forEach(group => {
+                    const input = group.querySelector('input, textarea, select');
+                    const isRequired = input.hasAttribute('required');
+                    
+                    if (isRequired && !input.value.trim()) {
+                        group.classList.add('error');
+                        group.classList.remove('success');
+                        isValid = false;
+                    } else if (input.type === 'email' && input.value && !isValidEmail(input.value)) {
+                        group.classList.add('error');
+                        group.classList.remove('success');
+                        isValid = false;
+                    } else {
+                        group.classList.remove('error');
+                        if (input.value.trim()) {
+                            group.classList.add('success');
+                        }
+                    }
+                });
+                
+                return isValid;
+            }
+
+            function isValidEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+
+            // Real-time validation
+            const inputs = contactForm.querySelectorAll('input, textarea, select');
+            inputs.forEach(input => {
+                input.addEventListener('blur', function() {
+                    const group = this.closest('.form-group');
+                    const isRequired = this.hasAttribute('required');
+                    
+                    if (isRequired && !this.value.trim()) {
+                        group.classList.add('error');
+                        group.classList.remove('success');
+                    } else if (this.type === 'email' && this.value && !isValidEmail(this.value)) {
+                        group.classList.add('error');
+                        group.classList.remove('success');
+                    } else {
+                        group.classList.remove('error');
+                        if (this.value.trim()) {
+                            group.classList.add('success');
+                        }
+                    }
+                });
+
+                input.addEventListener('input', function() {
+                    const group = this.closest('.form-group');
+                    if (group.classList.contains('error') && this.value.trim()) {
+                        group.classList.remove('error');
+                        if (this.type !== 'email' || isValidEmail(this.value)) {
+                            group.classList.add('success');
+                        }
+                    }
+                });
+            });
+
+            // Form submission
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Hide previous messages
+                successMessage.classList.remove('show');
+                errorMessage.classList.remove('show');
+                
+                if (!validateForm()) {
+                    return;
+                }
+                
+                // Show loading state
+                submitBtn.classList.add('loading');
+                submitBtn.disabled = true;
+                loadingOverlay.classList.add('show');
+                
+                // Simulate API call
+                setTimeout(function() {
+                    // Hide loading state
+                    submitBtn.classList.remove('loading');
+                    submitBtn.disabled = false;
+                    loadingOverlay.classList.remove('show');
+                    
+                    // Show success message
+                    successMessage.classList.add('show');
+                    
+                    // Reset form
+                    contactForm.reset();
+                    const formGroups = contactForm.querySelectorAll('.form-group');
+                    formGroups.forEach(group => {
+                        group.classList.remove('error', 'success');
+                    });
+                    
+                    // Scroll to success message
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                }, 2000);
+            });
+
+            // Mobile menu functionality
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.addEventListener('click', function() {
+                // Add mobile menu functionality here
+                console.log('Mobile menu clicked');
+            });
+
+            // Intersection Observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for animation
+            const animatedElements = document.querySelectorAll('.contact-form, .contact-info, .location-card, .section-header');
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+
+            // Auto-hide messages after 10 seconds
+            function autoHideMessage(element) {
+                setTimeout(function() {
+                    element.classList.remove('show');
+                }, 10000);
+            }
+
+            // Enhanced form interactions
+            const formInputs = document.querySelectorAll('.form-input, .form-textarea, .form-select');
+            formInputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.parentElement.style.transform = 'translateY(-2px)';
+                });
+                
+                input.addEventListener('blur', function() {
+                    this.parentElement.style.transform = 'translateY(0)';
+                });
+            });
+        });
+
+        // WhatsApp functionality
+        function openWhatsApp(source) {
+            const phoneNumber = '+2348001234567'; // Replace with actual WhatsApp number
+            const message = encodeURIComponent(`Hello! I'm interested in learning more about Bloomy Technologies courses. (Contacted via: ${source})`);
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+            window.open(whatsappURL, '_blank');
+        }
+
+        // Map functionality
+        function openMap(location) {
+            let coordinates, name;
+            
+            if (location === 'usa') {
+                coordinates = '37.4419,122.1430'; // Silicon Valley coordinates
+                name = 'Bloomy Technologies HQ, Silicon Valley';
+            } else if (location === 'nigeria') {
+                coordinates = '6.6018,3.3515'; // Lagos coordinates
+                name = 'Bloomy Technologies Nigeria, Lagos';
+            }
+            
+            const mapURL = `https://maps.app.goo.gl/9mrptJSaJNZpCvDY7`;
+            window.open(mapURL, '_blank');
+        }
+
+        // Schedule consultation functionality
+        function scheduleConsultation() {
+            // This would typically integrate with a scheduling system like Calendly
+            const calendlyURL = 'https://calendly.com/bloomytechnologies/consultation';
+            window.open(calendlyURL, '_blank');
+        }
+
+        // Enhanced scroll effects
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.page-header::before');
+            
+            parallaxElements.forEach(element => {
+                const speed = 0.5;
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        // Form analytics (for tracking form interactions)
+        function trackFormInteraction(action, field) {
+            // This would integrate with analytics services like Google Analytics
+            console.log(`Form ${action}: ${field}`);
+        }
+
+        // Add event listeners for form analytics
+        document.addEventListener('DOMContentLoaded', function() {
+            const formElements = document.querySelectorAll('#contactForm input, #contactForm textarea, #contactForm select');
+            
+            formElements.forEach(element => {
+                element.addEventListener('focus', function() {
+                    trackFormInteraction('field_focus', this.name);
+                });
+                
+                element.addEventListener('blur', function() {
+                    if (this.value) {
+                        trackFormInteraction('field_complete', this.name);
+                    }
+                });
+            });
+            
+            document.getElementById('contactForm').addEventListener('submit', function() {
+                trackFormInteraction('form_submit', 'contact_form');
+            });
+        });
+
+        // Keyboard navigation support
+        document.addEventListener('keydown', function(e) {
+            // Escape key closes mobile menu if open
+            if (e.key === 'Escape') {
+                // Close mobile menu logic here
+            }
+            
+            // Enter key on WhatsApp float button
+            if (e.key === 'Enter' && e.target.classList.contains('whatsapp-float')) {
+                openWhatsApp('Keyboard Navigation');
+            }
+        });
+
+        // Touch device support
+        function isTouchDevice() {
+            return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        }
+
+        if (isTouchDevice()) {
+            document.body.classList.add('touch-device');
+            
+            // Enhance touch interactions
+            const touchElements = document.querySelectorAll('.info-card, .location-card, .quick-btn');
+            touchElements.forEach(element => {
+                element.addEventListener('touchstart', function() {
+                    this.style.transform = 'scale(0.98)';
+                });
+                
+                element.addEventListener('touchend', function() {
+                    this.style.transform = '';
+                });
+            });
+        }
+
+        // Progressive Web App support
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            
+            // Show install button if needed
+            const installButton = document.getElementById('installButton');
+            if (installButton) {
+                installButton.style.display = 'block';
+                installButton.addEventListener('click', () => {
+                    deferredPrompt.prompt();
+                    deferredPrompt.userChoice.then((choiceResult) => {
+                        if (choiceResult.outcome === 'accepted') {
+                            console.log('User accepted the install prompt');
+                        }
+                        deferredPrompt = null;
+                    });
+                });
+            }
+        });
+
+        // Service Worker registration (for PWA)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((registration) => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch((registrationError) => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+
+        // Error handling for failed requests
+        window.addEventListener('error', function(e) {
+            console.error('Global error:', e.error);
+            // You could send error reports to a logging service here
+        });
+
+        // Performance monitoring
+        window.addEventListener('load', function() {
+            // Monitor page load performance
+            if ('performance' in window) {
+                const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+                console.log('Page load time:', loadTime + 'ms');
+                
+                // You could send this data to analytics
+                if (loadTime > 3000) {
+                    console.warn('Page load time is slow');
+                }
+            }
+        });
+
+        // Accessibility enhancements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add skip link functionality
+            const skipLink = document.createElement('a');
+            skipLink.href = '#main-content';
+            skipLink.textContent = 'Skip to main content';
+            skipLink.className = 'skip-link';
+            skipLink.style.cssText = `
+                position: absolute;
+                top: -40px;
+                left: 6px;
+                background: var(--primary);
+                color: white;
+                padding: 8px;
+                text-decoration: none;
+                border-radius: 4px;
+                z-index: 10000;
+                transition: top 0.3s;
+            `;
+            
+            skipLink.addEventListener('focus', function() {
+                this.style.top = '6px';
+            });
+            
+            skipLink.addEventListener('blur', function() {
+                this.style.top = '-40px';
+            });
+            
+            document.body.insertBefore(skipLink, document.body.firstChild);
+            
+            // Add main content landmark
+            const contactSection = document.querySelector('.contact-section');
+            if (contactSection) {
+                contactSection.id = 'main-content';
+                contactSection.setAttribute('role', 'main');
+            }
+            
+            // Enhance focus management
+            const focusableElements = document.querySelectorAll('a, button, input, textarea, select');
+            focusableElements.forEach(element => {
+                element.addEventListener('focus', function() {
+                    this.style.outline = '3px solid var(--primary)';
+                    this.style.outlineOffset = '2px';
+                });
+                
+                element.addEventListener('blur', function() {
+                    this.style.outline = '';
+                    this.style.outlineOffset = '';
+                });
+            });
+        });
+
+        // Print styles support
+        window.addEventListener('beforeprint', function() {
+            // Hide unnecessary elements when printing
+            const elementsToHide = document.querySelectorAll('.whatsapp-float, .scroll-top, .nav-cta');
+            elementsToHide.forEach(element => {
+                element.style.display = 'none';
+            });
+        });
+
+        window.addEventListener('afterprint', function() {
+            // Restore elements after printing
+            const elementsToShow = document.querySelectorAll('.whatsapp-float, .scroll-top, .nav-cta');
+            elementsToShow.forEach(element => {
+                element.style.display = '';
+            });
+        });
+    </script>
+</body>
+</html>

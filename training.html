@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Programs - Bloomy Technologies</title>
+    <meta name="description" content="Explore our comprehensive tech training programs with expert instructors and hands-on learning.">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --secondary: #7c3aed;
+            --accent: #ec4899;
+            --dark: #0f172a;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-600: #475569;
+            --gray-900: #0f172a;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #ec4899 100%);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--gray-900);
+            background: var(--white);
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--gray-200);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            height: 70px;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo img {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-600);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            background: var(--gradient);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: transform 0.2s ease;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-1px);
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-menu span {
+            width: 20px;
+            height: 2px;
+            background: var(--gray-600);
+            transition: all 0.3s ease;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: var(--dark);
+            color: white;
+            padding: 140px 2rem 80px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .highlight {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Course Filter */
+        .filter-section {
+            background: var(--gray-50);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            border: 2px solid var(--gray-200);
+            background: white;
+            border-radius: 25px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--gray-600);
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            border-color: var(--primary);
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Courses Section */
+        .courses-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            border: 1px solid var(--gray-200);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .course-header {
+            background: var(--gradient);
+            color: white;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .course-level {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .course-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .course-icon i {
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        .course-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .course-subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .course-content {
+            padding: 2rem;
+        }
+
+        .course-description {
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .course-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .course-features li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 0.5rem;
+            color: var(--gray-600);
+            font-size: 0.9rem;
+        }
+
+        .course-features i {
+            color: var(--primary);
+            font-size: 0.8rem;
+        }
+
+        .course-footer {
+            padding: 0 2rem 2rem;
+            border-top: 1px solid var(--gray-100);
+            padding-top: 1.5rem;
+        }
+
+        .course-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .duration {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+        }
+
+        .course-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            cursor: pointer;
+            flex: 1;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            background: #25d366;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-lg);
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-float i {
+            color: white;
+            font-size: 1.4rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            line-height: 1.8;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Course Category Colors */
+        .course-card[data-category*="featured"] .course-header {
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+        }
+
+        .course-card[data-category*="development"] .course-header {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        .course-card[data-category*="design"] .course-header {
+            background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
+        }
+
+        .course-card[data-category*="management"] .course-header {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        }
+
+        .course-card[data-category*="marketing"] .course-header {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+        }
+
+        .course-card[data-category*="infrastructure"] .course-header {
+            background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .page-header {
+                padding: 120px 1rem 60px;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .courses-section {
+                padding: 3rem 1rem;
+            }
+
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .course-actions {
+                flex-direction: column;
+            }
+
+            .filter-buttons {
+                gap: 0.5rem;
+            }
+
+            .filter-btn {
+                font-size: 0.85rem;
+                padding: 6px 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .course-header {
+                padding: 1.5rem;
+            }
+
+            .course-content {
+                padding: 1.5rem;
+            }
+
+            .course-footer {
+                padding: 0 1.5rem 1.5rem;
+                padding-top: 1.5rem;
+            }
+        }
+
+        /* Hidden courses for filtering */
+        .course-card.hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">
+    <img src="/bloomy logo.jpg" alt="Bloomy Technologies Logo">
+    <span>Bloomy Technologies</span>
+</a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="training.html" class="active">Training</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            
+            <a href="contact.html" class="nav-cta">Enroll Now</a>
+            
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Our <span class="highlight">Training Programs</span></h1>
+        <p>Transform your career with expert-led courses designed for real-world success. Choose from our comprehensive tech training programs.</p>
+    </section>
+
+    <!-- Course Filter -->
+    <section class="filter-section">
+        <h3>Browse Courses by Category</h3>
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All Courses</button>
+            <button class="filter-btn" data-filter="featured">Featured</button>
+            <button class="filter-btn" data-filter="development">Development</button>
+            <button class="filter-btn" data-filter="design">Design</button>
+            <button class="filter-btn" data-filter="management">Management</button>
+            <button class="filter-btn" data-filter="marketing">Marketing</button>
+            <button class="filter-btn" data-filter="infrastructure">Infrastructure</button>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses-section">
+        <div class="courses-grid">
+            
+            <!-- DevOps & Cloud Computing -->
+            <div class="course-card" data-category="featured infrastructure">
+                <div class="course-header">
+                    <div class="course-level">Beginner to Advanced</div>
+                    <div class="course-icon">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <h3 class="course-title">Linux, DevOps & Cloud Computing</h3>
+                    <p class="course-subtitle">Master Linux Fundamentals, modern infrastructure and deployment practices</p>
+                </div>
+                
+                <div class="course-content">
+                    <p class="course-description">
+                        Master Linux fundamentals, cloud infrastructure, CI/CD pipelines, containerization, and automation tools. Our signature course.
+                    </p>
+                    
+                    <ul class="course-features">
+                        <li><i class="fas fa-check"></i> Linux Fundamentals</li>
+                        <li><i class="fas fa-check"></i> System Administration</li>
+                        <li><i class="fas fa-check"></i> Shell Scripting</li>
+                        <li><i class="fas fa-check"></i> AWS Cloud Provider</li>
+                        <li><i class="fas fa-check"></i> Docker & Kubernetes</li>
+                        <li><i class="fas fa-check"></i> Jenkins, GitLab CI/CD</li>
+                        <li><i class="fas fa-check"></i> Infrastructure as Code</li>
+                        <li><i class="fas fa-check"></i> Monitoring & Security</li>
+                    </ul>
+                </div>
+                
+                <div class="course-footer">
+                    <div class="course-price">
+                        <span class="price">₦500,000</span>
+                        <span class="duration">3 Months</span>
+                    </div>
+                    
+                    <div class="course-actions">
+                        <a href="#" class="btn btn-primary" onclick="openWhatsApp('DevOps & Cloud Computing Registration')">
+                            <i class="fas fa-rocket"></i>
+                            Register Now
+                        </a>
+                        <a href="#" class="btn btn-secondary" onclick="openWhatsApp('DevOps Course Info')">
+                            <i class="fas fa-info"></i>
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cybersecurity -->
+            <div class="course-card" data-category="featured infrastructure">
+                <div class="course-header">
+                    <div class="course-level">Beginner to Intermediate</div>
+                    <div class="course-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="course-title">Cybersecurity</h3>
+                    <p class="course-subtitle">Protect digital assets with cutting-edge security skills</p>
+                </div>
+                
+                <div class="course-content">
+                    <p class="course-description">
+                        Comprehensive cybersecurity training covering ethical hacking, penetration testing, network security, and compliance frameworks.
+                    </p>
+                    
+                    <ul class="course-features">
+                        <li><i class="fas fa-check"></i> Ethical Hacking & Pen Testing</li>
+                        <li><i class="fas fa-check"></i> Network & System Security</li>
+                        <li><i class="fas fa-check"></i> Risk Assessment</li>
+                        <li><i class="fas fa-check"></i> Security Compliance</li>
+                        <li><i class="fas fa-check"></i> Incident Response</li>
+                    </ul>
+                </div>
+                
+                <div class="course-footer">
+                    <div class="course-price">
+                        <span class="price">₦350,000</span>
+                        <span class="duration">12 Weeks</span>
+                    </div>
+                    
+                    <div class="course-actions">
+                        <a href="#" class="btn btn-primary" onclick="openWhatsApp('Cybersecurity Registration')">
+                            <i class="fas fa-shield-alt"></i>
+                            Register Now
+                        </a>
+                        <a href="#" class="btn btn-secondary" onclick="openWhatsApp('Cybersecurity Course Info')">
+                            <i class="fas fa-info"></i>
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Science & Analytics -->
+            <div class="course-card" data-category="featured development">
+                <div class="course-header">
+                    <div class="course-level">Beginner to Intermediate</div>
+                    <div class="course-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="course-title">Data Science & Analytics</h3>
+                    <p class="course-subtitle">Turn data into actionable business insights</p>
+                </div>
+                
+                <div class="course-content">
+                    <p class="course-description">
+                        Master the complete data science workflow from data collection to deployment. Learn Python, R, machine learning, and AI.
+                    </p>
+                    
+                    <ul class="course-features">
+                        <li><i class="fas fa-check"></i> Python & R Programming</li>
+                        <li><i class="fas fa-check"></i> Machine Learning & AI</li>
+                        <li><i class="fas fa-check"></i> Data Visualization</li>
+                        <li><i class="fas fa-check"></i> Statistical Analysis</li>
+                        <li><i class="fas fa-check"></i> Big Data Technologies</li>
+                    </ul>
+                </div>
+                
+                <div class="course-footer">
+                    <div class="course-price">
+                        <span class="price">₦300,000</span>
+                        <span class="duration">12 Weeks</span>
+                    </div>
+                    
+                    <div class="course-actions">
+                        <a href="#" class="btn btn-primary" onclick="openWhatsApp('Data Science Registration')">
+                            <i class="fas fa-chart-line"></i>
+                            Register Now
+                        </a>
+                        <a href="#" class="btn btn-secondary" onclick="openWhatsApp('Data Science Course Info')">
+                            <i class="fas fa-info"></i>
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Web Development -->
+            <div class="course-card" data-category="development">
+                <div class="course-header">
+                    <div class="course-level">Beginner to Intermediate</div>
+                    <div class="course-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="course-title">Full-Stack Web Development</h3>
+                    <p class="course-subtitle">Build modern web applications from frontend to backend</p>
+                </div>
+                
+                <div class="course-content">
+                    <p class="course-description">
+                        Complete full-stack web development program covering modern technologies. Build responsive websites and web applications.
+                    </p>
+                    
+                    <ul class="course-features">
+                        <li><i class="fas fa-check"></i> HTML5, CSS3, JavaScript</li>
+                        <li><i class="fas fa-check"></i> React.js & Modern Frameworks</li>
+                        <li><i class="fas fa-check"></i> Node.js & Express.js</li>
+                        <li><i class="fas fa-check"></i> Database Management</li>
+                        <li><i class="fas fa-check"></i> API Development</li>
+                    </ul>
+                </div>
+                
+                <div class="course-footer">
+                    <div class="course-price">
+                        <span class="price">₦350,000</span>
+                        <span class="duration">12 Weeks</span>
+                    </div>
+                    
+                    <div class="course-actions">
+                        <a href="#" class="btn btn-primary" onclick="openWhatsApp('Web Development Registration')">
+                            <i class="fas fa-code"></i>
+                            Register Now
+                        </a>
+                        <a href="#" class="btn btn-secondary" onclick="openWhatsApp('Web Development Course Info')">
+                            <i class="fas fa-info"></i>
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile App Development -->
+            <div class="course-card" data-category="development">
+                <div class="course-header">
+                    <div class="course-level">Beginner to Intermediate</div>
+                    <div class="course-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="course-title">Mobile App Development</h3>
+                    <p class="course-subtitle">Create native and cross-platform mobile applications</p>
+                </div>
+                
+                <div class="course-content">
+                    <p class="course-description">
+                        Learn to build mobile applications for iOS and Android using modern frameworks and native technologies.
+                    </p>
+                    
+                    <ul class="course-features">
+                        <li><i class="fas fa-check"></i> React Native & Flutter</li>
+                        <li><i class="fas fa-check"></i> iOS Development (Swift)</li>
+                        <li><i class="fas fa-check"></i> Android Development (Kotlin)</li>
+                        <li><i class="fas fa-check"></i> Mobile UI/UX Design</li>
+                        <li><i class="fas fa-check"></i> App Store Publishing</li>
+                    </ul>
+                </div>
+                
+                <div class="course-footer">
+                    <div class="course-price">
+                        <span class="price">₦400,000</span>
+                        <span class="duration">12 Weeks</span>
+                    </div>
+                    
+                    <div class="course-actions">
+                        <a href="#" class="btn btn-primary" onclick="openWhatsApp('Mobile Development Registration')">
+                            <i class="fas fa-mobile-alt"></i>
+                            Register Now
+                        </a>
+                        <a href="#" class="btn btn-secondary" onclick="openWhatsApp('Mobile Development Course Info')">
+                            <i class="fas fa-info"></i>
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UI/UX Design -->
+            <div class="course-card" data-category="design">
+                <div class="course-header">
+                    <div class="course-level">Beginner to Intermediate</div>
+                    <div class="course-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="course-title">UI/UX Design</h3>
+                    <p class="course-subtitle">Design intuitive and engaging user experiences</p>
+                </div>
+                
+                <div class="course-content">
+                    <p class="course-description">
+                        Master user experience design with hands-on projects. Learn design thinking, prototyping, and user research.
+                    </p>
+                    
+                    <ul class="course-features">
+                        <li><i class="fas fa-check"></i> Design Thinking Process</li>
+                        <li><i class="fas fa-check"></i> User Research & Testing</li>
+                        <li><i class="fas fa-check"></i> Wireframing & Prototyping</li>
+                        <li><i class="fas fa-check"></i> Figma & Adobe Creative Suite</li>
+                        <li><i class="fas fa-check"></i> Portfolio Development</li>
+                    </ul>
+                </div>
+                
+                <div class="course-footer">
+                    <div class="course-price">
+                        <span class="price">₦300,000</span>
+                        <span class="duration">12 Weeks</span>
+                    </div>
+                    
+                    <div class="course-actions">
+                        <a href="#" class="btn btn-primary" onclick="openWhatsApp('UI/UX Design Registration')">
+                            <i class="fas fa-palette"></i>
+                            Register Now
+                        </a>
+                        <a href="#" class="btn btn-secondary" onclick="openWhatsApp('UI/UX Design Course Info')">
+                            <i class="fas fa-info"></i>
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Management -->
+            <div class="course-card" data-category="management">
+                <div class="course-header">
+                    <div class="course-level">Beginner to Intermediate</div>
+                    <div class="course-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3 class="course-title">Product Management</h3>
+                    <p class="course-subtitle">Lead product strategy and development</p>
+                </div>
+                
+                <div class="course-content">
+                    <p class="course-description">
+                        Learn product strategy, roadmap planning, and team leadership. Master agile methodologies and user story creation.
+                    </p>
+                    
+                    <ul class="course-features">
+                        <li><i class="fas fa-check"></i> Product Strategy & Vision</li>
+                        <li><i class="fas fa-check"></i> Market Research & Analysis</li>
+                        <li><i class="fas fa-check"></i> Agile & Scrum Methodologies</li>
+                        <li><i class="fas fa-check"></i> Roadmap Planning</li>
+                        <li><i class="fas fa-check"></i> Team Leadership</li>
+                    </ul>
+                </div>
+                
+                <div class="course-footer">
+                    <div class="course-price">
+                        <span class="price">₦300,000</span>
+                        <span class="duration">12 Weeks</span>
+                    </div>
+                    
+                    <div class="course-actions">
+                        <a href="#" class="btn btn-primary" onclick="openWhatsApp('Product Management Registration')">
+                            <i class="fas fa-tasks"></i>
+                            Register Now
+                        </a>
+                        <a href="#" class="btn btn-secondary" onclick="openWhatsApp('Product Management Course Info')">
+                            <i class="fas fa-info"></i>
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Digital Marketing -->
+            <div class="course-card" data-category="marketing">
+                <div class="course-header">
+                    <div class="course-level">Beginner to Intermediate</div>
+                    <div class="course-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3 class="course-title">Digital Marketing</h3>
+                    <p class="course-subtitle">Master modern digital marketing strategies</p>
+                </div>
+                
+                <div class="course-content">
+                    <p class="course-description">
+                        Complete digital marketing course covering SEO, social media, content marketing, and paid advertising strategies.
+                    </p>
+                    
+                    <ul class="course-features">
+                        <li><i class="fas fa-check"></i> SEO & Content Marketing</li>
+                        <li><i class="fas fa-check"></i> Social Media Marketing</li>
+                        <li><i class="fas fa-check"></i> Google Ads & Facebook Ads</li>
+                        <li><i class="fas fa-check"></i> Email Marketing</li>
+                        <li><i class="fas fa-check"></i> Analytics & Reporting</li>
+                    </ul>
+                </div>
+                
+                <div class="course-footer">
+                    <div class="course-price">
+                        <span class="price">₦200,000</span>
+                        <span class="duration">12 Weeks</span>
+                    </div>
+                    
+                    <div class="course-actions">
+                        <a href="#" class="btn btn-primary" onclick="openWhatsApp('Digital Marketing Registration')">
+                            <i class="fas fa-bullhorn"></i>
+                            Register Now
+                        </a>
+                        <a href="#" class="btn btn-secondary" onclick="openWhatsApp('Digital Marketing Course Info')">
+                            <i class="fas fa-info"></i>
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Management -->
+            <div class="course-card" data-category="management">
+                <div class="course-header">
+                    <div class="course-level">Beginner to Intermediate</div>
+                    <div class="course-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3 class="course-title">Project Management</h3>
+                    <p class="course-subtitle">Lead projects to successful completion</p>
+                </div>
+                
+                <div class="course-content">
+                    <p class="course-description">
+                        Comprehensive project management training covering traditional and agile methodologies, with PMP certification preparation.
+                    </p>
+                    
+                    <ul class="course-features">
+                        <li><i class="fas fa-check"></i> PMP Certification Prep</li>
+                        <li><i class="fas fa-check"></i> Agile & Waterfall Methods</li>
+                        <li><i class="fas fa-check"></i> Risk Management</li>
+                        <li><i class="fas fa-check"></i> Resource Planning</li>
+                        <li><i class="fas fa-check"></i> Stakeholder Management</li>
+                    </ul>
+                </div>
+                
+                <div class="course-footer">
+                    <div class="course-price">
+                        <span class="price">₦300,000</span>
+                        <span class="duration">12 Weeks</span>
+                    </div>
+                    
+                    <div class="course-actions">
+                        <a href="#" class="btn btn-primary" onclick="openWhatsApp('Project Management Registration')">
+                            <i class="fas fa-project-diagram"></i>
+                            Register Now
+                        </a>
+                        <a href="#" class="btn btn-secondary" onclick="openWhatsApp('Project Management Course Info')">
+                            <i class="fas fa-info"></i>
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- WhatsApp Float -->
+    <a href="#" class="whatsapp-float" onclick="openWhatsApp('General Inquiry')">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+     <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Bloomy Technologies</h3>
+                <p>Leading tech training institute with campuses in USA and Nigeria. Transforming careers through world-class technology education since 2021.</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/bloomytechnologies_ikeja?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="training.html">Training Programs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Popular Courses</h3>
+                <ul>
+                    <li><a href="training.html#devops">DevOps & Cloud Computing</a></li>
+                    <li><a href="training.html#cybersecurity">Cybersecurity</a></li>
+                    <li><a href="training.html#data-science">Data Science & Analytics</a></li>
+                    <li><a href="training.html#web-dev">Web Development</a></li>
+                    <li><a href="training.html#mobile-dev">Mobile App Development</a></li>
+                    <li><a href="training.html#ui-ux">UI/UX Design</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Headquarters: United State of America</p>
+                <p><i class="fas fa-map-marker-alt"></i> Nigeria Branch: 54B Adeniyi Jones Ave. Ikeja, Lagos</p>
+                <p><i class="fas fa-phone"></i> +1 (513) 572 7116, +234 913 464 4911</p>
+                <p><i class="fas fa-envelope"></i> info@bloomy-technologies.com</p>
+                <p><i class="fab fa-whatsapp"></i> WhatsApp: +234 913 464 4911</p>
+                <p><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 6:00 PM</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Bloomy Technologies. All rights reserved. | Privacy Policy | Terms of Service</p>
+        </div>
+    </footer>
+
+    <script>
+        // Course filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const courseCards = document.querySelectorAll('.course-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    const filter = this.getAttribute('data-filter');
+
+                    courseCards.forEach(card => {
+                        if (filter === 'all') {
+                            card.classList.remove('hidden');
+                        } else {
+                            const categories = card.getAttribute('data-category');
+                            if (categories && categories.includes(filter)) {
+                                card.classList.remove('hidden');
+                            } else {
+                                card.classList.add('hidden');
+                            }
+                        }
+                    });
+                });
+            });
+        });
+
+        // WhatsApp integration
+        function openWhatsApp(message) {
+            const phoneNumber = '+2348123456789'; // Replace with actual WhatsApp number
+            const encodedMessage = encodeURIComponent(`Hello! I'm interested in ${message}. Please provide more information.`);
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            window.open(whatsappURL, '_blank');
+        }
+
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (mobileMenu) {
+                mobileMenu.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    this.classList.toggle('active');
+                });
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Add animation on scroll for course cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.course-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

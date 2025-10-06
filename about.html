@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Bloomy Technologies | Leading Tech Training Institute</title>
+    <meta name="description"
+        content="Learn about Bloomy Technologies' journey from USA to Nigeria, our mission to transform tech careers, and meet our expert team led by CEO Engr. Dotun Oketade.">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #7c3aed;
+            --accent: #ec4899;
+            --dark: #0f172a;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-600: #475569;
+            --gray-900: #0f172a;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #ec4899 100%);
+            --shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--gray-900);
+            background: var(--white);
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--gray-200);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow);
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo img {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-600);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            background: var(--gradient);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: transform 0.2s ease;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-1px);
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-menu span {
+            width: 20px;
+            height: 2px;
+            background: var(--gray-600);
+            transition: 0.3s;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: var(--dark);
+            color: white;
+            padding: 140px 2rem 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+        }
+
+        .page-header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .page-header .highlight {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: white;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 80px 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+        }
+
+        /* Story Section */
+        .story-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .story-content h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 1.5rem;
+        }
+
+        .story-content p {
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .story-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .highlight-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--gray-50);
+            border-radius: 12px;
+        }
+
+        .highlight-number {
+            font-size: 2rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-text {
+            color: var(--gray-600);
+            font-weight: 500;
+        }
+
+        .story-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            background: var(--gray-100);
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* CORRECTED RULE: This ensures the image covers the container perfectly */
+        .story-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .story-image::before {
+            content: 'Company Story Image Placeholder\A(Replace with actual company photos)';
+            white-space: pre-line;
+            text-align: center;
+            color: var(--gray-600);
+            font-weight: 500;
+        }
+
+        /* Mission Vision Values */
+        .mvv-section {
+            background: var(--gray-50);
+        }
+
+        .mvv-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .mvv-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .mvv-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .mvv-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .mvv-icon i {
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        .mvv-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+
+        .mvv-card p {
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        /* Team Section (Now "Why Us" Section) */
+        .team-section {
+            background: white;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: var(--dark);
+            color: white;
+        }
+
+        .stats-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+
+        /* --- ADD THIS ENTIRE BLOCK --- */
+
+        /* Recent Graduates Gallery */
+        .graduates-gallery {
+            background: var(--gray-50);
+        }
+
+        .gallery-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .graduate-card {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+            height: 300px;
+            /* Gives all cards a uniform height */
+            background: var(--dark);
+        }
+
+        .graduate-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .graduate-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .graduate-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .graduate-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            color: white;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0) 100%);
+            transform: translateY(30%);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .graduate-card:hover .graduate-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .graduate-overlay h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .graduate-overlay p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            background: #25d366;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-lg);
+            transition: transform 0.2s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: translateY(-2px);
+        }
+
+        .whatsapp-float i {
+            color: white;
+            font-size: 1.4rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            line-height: 1.8;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-1px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .page-header {
+                padding: 120px 1rem 60px;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .section {
+                padding: 60px 1rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .story-highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .mvv-grid,
+            .facilities-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Simple fade-in animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header" id="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">
+                <img src="/bloomy logo.jpg" alt="Bloomy Technologies Logo">
+                <span>Bloomy Technologies</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="training.html">Training</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <a href="contact.html" class="nav-cta">Enroll Now</a>
+
+            <div class="mobile-menu" id="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <div class="page-header-content">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>About Us</span>
+            </div>
+            <h1>About <span class="highlight">Bloomy Technologies</span></h1>
+            <p>Transforming careers through world-class technology education since 2021. From our roots in the United
+                States of America to our expansion across Nigeria, we're building the next generation of tech leaders.
+            </p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header fade-in">
+            <h2>Our <span class="highlight">Journey</span></h2>
+            <p>From a vision in the USA to empowering thousands across two continents</p>
+        </div>
+
+        <div class="story-grid">
+            <div class="story-content fade-in">
+                <h3>Founded with Purpose</h3>
+                <p>Bloomy Technologies was founded in 2021 in the United States of America by <strong>Engr. Dotun
+                        Oketade</strong>, a visionary engineer with a passion for bridging the technology skills gap.
+                    Recognizing the growing demand for skilled tech professionals, we set out to create a training
+                    institute that would not just teach technology, but transform careers.</p>
+
+                <p>Our journey began with a simple belief: that with the right training, mentorship, and support, anyone
+                    can build a successful career in technology. This vision inspired us to develop comprehensive
+                    curricula, partner with industry leaders, and create an ecosystem where students do not just learn
+                    but thrive.</p>
+
+                <p>In 2024, we expanded our operations to Nigeria, and in 2025, we established our branch in Ikeja,
+                    Lagos, bringing world-class tech education closer to the African market. This expansion reflects our
+                    commitment to global impact and our belief in the immense potential of African tech talent.</p>
+
+                <div class="story-highlights">
+                    <div class="highlight-item">
+                        <span class="highlight-number">2021</span>
+                        <div class="highlight-text">Founded in United States of America</div>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-number">2024</span>
+                        <div class="highlight-text">Expanded to Nigeria</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="story-image fade-in">
+                <img src="/our-journey.png" alt="The Bloomy Technologies team during a workshop">
+            </div>
+        </div>
+    </section>
+
+    <section class="section mvv-section">
+        <div class="section-header fade-in">
+            <h2>Our <span class="highlight">Foundation</span></h2>
+            <p>The core principles that guide everything we do</p>
+        </div>
+
+        <div class="mvv-grid">
+            <div class="mvv-card fade-in">
+                <div class="mvv-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h3>Our Mission</h3>
+                <p>To empower individuals with cutting-edge technology skills and knowledge, enabling them to build
+                    successful careers in the global tech industry while fostering innovation and digital transformation
+                    across communities.</p>
+            </div>
+
+            <div class="mvv-card fade-in">
+                <div class="mvv-icon">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <h3>Our Vision</h3>
+                <p>To be the leading global technology training institute, recognized for excellence in education,
+                    innovation in curriculum design, and success in creating the next generation of tech leaders and
+                    entrepreneurs.</p>
+            </div>
+
+            <div class="mvv-card fade-in">
+                <div class="mvv-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>Our Values</h3>
+                <p><strong>Excellence:</strong> We strive for the highest standards in everything we do.<br>
+                    <strong>Innovation:</strong> We embrace new technologies and teaching methods.<br>
+                    <strong>Integrity:</strong> We build trust through transparency and honesty.<br>
+                    <strong>Inclusivity:</strong> We welcome learners from all backgrounds.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header fade-in">
+            <h2>The <span class="highlight">Bloomy Difference</span></h2>
+            <p>Discover what makes our approach to tech education unique and effective</p>
+        </div>
+
+        <div class="mvv-grid">
+            <div class="mvv-card fade-in">
+                <div class="mvv-icon">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <h3>Expert Instructors</h3>
+                <p>Learn from seasoned industry professionals who bring real-world experience and practical insights
+                    directly into the classroom, ensuring you learn what truly matters.</p>
+            </div>
+
+            <div class="mvv-card fade-in">
+                <div class="mvv-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h3>Project-Based Learning</h3>
+                <p>Move beyond theory with a hands-on curriculum. Build a portfolio of real-world projects that showcase
+                    your skills to potential employers from day one.</p>
+            </div>
+
+            <div class="mvv-card fade-in">
+                <div class="mvv-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <h3>Dedicated Career Support</h3>
+                <p>Our commitment doesn't end at graduation. We provide personalized career coaching, resume workshops,
+                    and direct connections to our network of industry partners.</p>
+            </div>
+        </div>
+    </section>
+    <section class="section stats-section">
+        <div class="section-header fade-in">
+            <h2>Our <span class="highlight">Impact</span> in Numbers</h2>
+            <p>Measurable results that speak to our commitment to excellence</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-item fade-in">
+                <span class="stat-number" data-count="5000">0</span>
+                <div class="stat-label">Graduates Worldwide</div>
+            </div>
+
+            <div class="stat-item fade-in">
+                <span class="stat-number" data-count="95">0</span>
+                <div class="stat-label">Job Placement Rate (%)</div>
+            </div>
+
+            <div class="stat-item fade-in">
+                <span class="stat-number" data-count="10">0</span>
+                <div class="stat-label">Specialized Programs</div>
+            </div>
+
+            <div class="stat-item fade-in">
+                <span class="stat-number" data-count="2">0</span>
+                <div class="stat-label">Countries of Operation</div>
+            </div>
+
+            <div class="stat-item fade-in">
+                <span class="stat-number" data-count="150">0</span>
+                <div class="stat-label">Industry Partners</div>
+            </div>
+
+            <div class="stat-item fade-in">
+                <span class="stat-number" data-count="7">0</span>
+                <div class="stat-label">Years of Excellence</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section graduates-gallery">
+        <div class="section-header fade-in">
+            <h2>Our Proud <span class="highlight">Graduates</span></h2>
+            <p>Celebrating the success and achievements of our recent alumni community</p>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="graduate-card fade-in">
+                <img src="/1.jpeg" alt="A proud Bloomy Technologies graduate">
+                <div class="graduate-overlay">
+                    <h3>Class of 2025</h3>
+                    <p>DevOps Engineering</p>
+                </div>
+            </div>
+
+            <div class="graduate-card fade-in">
+                <img src="/2.jpeg" alt="A group of smiling Bloomy Technologies graduates">
+                <div class="graduate-overlay">
+                    <h3>Class of 2025</h3>
+                    <p>Cybersecurity Cohort</p>
+                </div>
+            </div>
+
+            <div class="graduate-card fade-in">
+                <img src="/3.png" alt="Graduate receiving a certificate">
+                <div class="graduate-overlay">
+                    <h3>Class of 2025</h3>
+                    <p>Data Science & Analytics</p>
+                </div>
+            </div>
+
+            <div class="graduate-card fade-in">
+                <img src="/4.png" alt="Graduates celebrating their achievement">
+                <div class="graduate-overlay">
+                    <h3>Class of 2025</h3>
+                    <p>Full-Stack Web Development</p>
+                </div>
+            </div>
+
+            <div class="graduate-card fade-in">
+                <img src="/5.png" alt="A graduate working on their final project">
+                <div class="graduate-overlay">
+                    <h3>Class of 2025</h3>
+                    <p>UI/UX Design</p>
+                </div>
+            </div>
+
+            <div class="graduate-card fade-in">
+                <img src="/6.png" alt="Bloomy Technologies graduation day event">
+                <div class="graduate-overlay">
+                    <h3>Class of 2025</h3>
+                    <p>Mobile App Development</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header fade-in">
+            <h2>Industry <span class="highlight">Partnerships</span></h2>
+            <p>Collaborating with leading companies to ensure relevant, market-driven education</p>
+        </div>
+
+        <div class="mvv-grid">
+            <div class="mvv-card fade-in">
+                <div class="mvv-icon">
+                    <i class="fab fa-aws"></i>
+                </div>
+                <h3>Cloud Partners</h3>
+                <p>Official training partnerships with AWS, Microsoft Azure, and Google Cloud Platform to provide
+                    certified learning paths and hands-on lab experiences.</p>
+            </div>
+
+            <div class="mvv-card fade-in">
+                <div class="mvv-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3>Corporate Partners</h3>
+                <p>Strategic alliances with multinational corporations and startups that provide internship
+                    opportunities, job placements, and real-world project experiences.</p>
+            </div>
+
+            <div class="mvv-card fade-in">
+                <div class="mvv-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <h3>Certification Bodies</h3>
+                <p>Accredited relationships with major certification providers ensuring our graduates earn
+                    industry-recognized credentials that matter to employers.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--dark); color: white; text-align: center;">
+        <div class="section-header fade-in">
+            <h2 style="color: white;">Ready to <span class="highlight">Transform</span> Your Career?</h2>
+            <p style="color: rgba(255, 255, 255, 0.8);">Join thousands of successful graduates who started their tech
+                journey with Bloomy Technologies</p>
+        </div>
+
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+            <a href="training.html" class="btn"
+                style="background: var(--gradient); color: white; padding: 14px 28px; border-radius: 25px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                <i class="fas fa-graduation-cap"></i>
+                Explore Our Courses
+            </a>
+            <a href="contact.html" class="btn"
+                style="background: transparent; color: white; border: 2px solid rgba(255, 255, 255, 0.3); padding: 14px 28px; border-radius: 25px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                <i class="fas fa-phone"></i>
+                Contact Us Today
+            </a>
+        </div>
+    </section>
+
+    <a href="#" class="whatsapp-float" onclick="openWhatsApp('About Bloomy Technologies')"
+        title="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Bloomy Technologies</h3>
+                <p>Leading tech training institute with campuses in USA and Nigeria. Transforming careers through
+                    world-class technology education since 2018.</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/bloomytechnologies_ikeja?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                        title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="training.html">Training Programs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Popular Courses</h3>
+                <ul>
+                    <li><a href="training.html#devops">DevOps & Cloud Computing</a></li>
+                    <li><a href="training.html#cybersecurity">Cybersecurity</a></li>
+                    <li><a href="training.html#data-science">Data Science & Analytics</a></li>
+                    <li><a href="training.html#web-dev">Web Development</a></li>
+                    <li><a href="training.html#mobile-dev">Mobile App Development</a></li>
+                    <li><a href="training.html#ui-ux">UI/UX Design</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Headquarters: United States of America</p>
+                <p><i class="fas fa-map-marker-alt"></i> Nigeria Branch: 54B Adeniyi Jones Ave. Ikeja, Lagos</p>
+                <p><i class="fas fa-phone"></i> +1 (513) 572 7116, +234 913 464 4911</p>
+                <p><i class="fas fa-envelope"></i> info@bloomy-technologies.com</p>
+                <p><i class="fab fa-whatsapp"></i> WhatsApp: +234 913 464 4911</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Bloomy Technologies. All rights reserved. | Privacy Policy | Terms of Service</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple and efficient scroll handling
+        let isScrolling = false;
+
+        function handleScroll() {
+            const header = document.getElementById('header');
+
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            isScrolling = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!isScrolling) {
+                window.requestAnimationFrame(handleScroll);
+                isScrolling = true;
+            }
+        });
+
+        // Simple fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+
+        // Simple counter animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-count'));
+                const duration = 2000;
+                const increment = target / (duration / 16);
+                let current = 0;
+
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+
+                    if (target > 1000) {
+                        counter.textContent = Math.floor(current).toLocaleString() + '+';
+                    } else if (target < 100) {
+                        counter.textContent = Math.floor(current) + '%';
+                    } else {
+                        counter.textContent = Math.floor(current) + '+';
+                    }
+                }, 16);
+            });
+        }
+
+        // Trigger counter animation when stats section is visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const statsSection = document.querySelector('.stats-section');
+            if (statsSection) {
+                statsObserver.observe(statsSection);
+            }
+        });
+
+        // WhatsApp integration
+        function openWhatsApp(topic = 'General Inquiry') {
+            const message = encodeURIComponent(`Hello! I'm interested in learning more about ${topic}. Could you please provide more information about Bloomy Technologies and how I can get started?`);
+            const whatsappNumber = '2348001234567'; // Replace with actual WhatsApp number
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+            window.open(whatsappURL, '_blank');
+        }
+
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (mobileMenu && navLinks) {
+                mobileMenu.addEventListener('click', () => {
+                    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+                });
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const headerHeight = 70;
+                        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Simple loading effect
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.3s ease';
+
+            // Show body after a brief moment
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+
+</html>
