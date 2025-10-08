@@ -690,6 +690,34 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Fix for Header on Small Mobile Devices (like iPhone XR and smaller) */
+        @media (max-width: 430px) {
+            .nav {
+                padding: 0 1rem;
+                /* Reduce side padding to create more space */
+            }
+
+            .logo {
+                font-size: 1rem;
+                /* Make the "Bloomy Technologies" text smaller */
+                gap: 8px;
+                /* Reduce gap between logo and text */
+            }
+
+            .logo img {
+                width: 32px;
+                /* Slightly smaller logo image */
+                height: 32px;
+            }
+
+            .nav-cta {
+                padding: 8px 12px;
+                /* Make the button smaller */
+                font-size: 0.8rem;
+                /* Make the button text smaller */
+            }
+        }
     </style>
 </head>
 
