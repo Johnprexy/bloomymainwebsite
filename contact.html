@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Bloomy Technologies | Get in Touch</title>
-    <meta name="description" content="Contact Bloomy Technologies for course enrollment, career guidance, and tech training inquiries. Offices in USA and Lagos, Nigeria with expert support team.">
-    
+    <meta name="description"
+        content="Contact Bloomy Technologies for course enrollment, career guidance, and tech training inquiries. Offices in USA and Lagos, Nigeria with expert support team.">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -219,8 +222,13 @@
         }
 
         @keyframes slideGrid {
-            0% { transform: translateX(0) translateY(0); }
-            100% { transform: translateX(10px) translateY(10px); }
+            0% {
+                transform: translateX(0) translateY(0);
+            }
+
+            100% {
+                transform: translateX(10px) translateY(10px);
+            }
         }
 
         .page-header-content {
@@ -278,6 +286,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -285,8 +294,13 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         @keyframes slideInFromLeft {
@@ -294,6 +308,7 @@
                 opacity: 0;
                 transform: translateX(-50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -305,6 +320,7 @@
                 opacity: 0;
                 transform: translateX(50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -475,8 +491,13 @@
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         .submit-btn.loading span,
@@ -544,7 +565,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transform: rotate(45deg);
             transition: var(--transition);
             opacity: 0;
@@ -559,9 +580,11 @@
                 opacity: 0;
                 transform: translateX(-100%) translateY(-100%) rotate(45deg);
             }
+
             50% {
                 opacity: 1;
             }
+
             100% {
                 opacity: 0;
                 transform: translateX(100%) translateY(100%) rotate(45deg);
@@ -623,6 +646,7 @@
                 opacity: 0;
                 transform: translateY(-20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -716,8 +740,13 @@
         }
 
         @keyframes movePattern {
-            0% { transform: translateX(0) translateY(0); }
-            100% { transform: translateX(20px) translateY(20px); }
+            0% {
+                transform: translateX(0) translateY(0);
+            }
+
+            100% {
+                transform: translateX(20px) translateY(20px);
+            }
         }
 
         .location-flag {
@@ -877,8 +906,15 @@
         }
 
         @keyframes floatPattern {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
         }
 
         .quick-contact-content {
@@ -1012,9 +1048,11 @@
             0% {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
             }
+
             70% {
                 box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
             }
+
             100% {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
             }
@@ -1364,6 +1402,11 @@
             .location-card {
                 min-width: unset;
             }
+
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+
         }
 
         /* Dark mode support */
@@ -1382,6 +1425,7 @@
 
         /* Reduced motion support */
         @media (prefers-reduced-motion: reduce) {
+
             *,
             *::before,
             *::after {
@@ -1392,6 +1436,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Loading Overlay -->
     <div class="loading-overlay" id="loadingOverlay">
@@ -1402,19 +1447,19 @@
     <header class="header" id="header">
         <nav class="nav">
             <a href="index.html" class="logo">
-    <img src="/bloomy logo.jpg" alt="Bloomy Technologies Logo">
-    <span>Bloomy Technologies</span>
-</a>
-            
+                <img src="/bloomy logo.jpg" alt="Bloomy Technologies Logo">
+                <span>Bloomy Technologies</span>
+            </a>
+
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="training.html">Training</a></li>
                 <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
-            
+
             <a href="contact.html" class="nav-cta">Enroll Now</a>
-            
+
             <div class="mobile-menu" id="mobileMenu">
                 <span></span>
                 <span></span>
@@ -1432,7 +1477,8 @@
                 <span>Contact Us</span>
             </div>
             <h1>Get In <span class="highlight">Touch</span></h1>
-            <p>Ready to transform your tech career? Contact our expert team for course enrollment, career guidance, and personalized learning paths tailored to your goals.</p>
+            <p>Ready to transform your tech career? Contact our expert team for course enrollment, career guidance, and
+                personalized learning paths tailored to your goals.</p>
         </div>
     </section>
 
@@ -1443,19 +1489,21 @@
             <div class="contact-form">
                 <div class="message success-message" id="successMessage">
                     <i class="fas fa-check-circle"></i>
-                    <span>Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.</span>
+                    <span>Thank you! Your message has been sent successfully. We'll get back to you within 24
+                        hours.</span>
                 </div>
-                
+
                 <div class="message error-message" id="errorMessage">
                     <i class="fas fa-exclamation-circle"></i>
                     <span>There was an error sending your message. Please try again or contact us directly.</span>
                 </div>
-                
+
                 <div class="form-header">
                     <h2>Send Us a Message</h2>
-                    <p>Fill out the form below and our expert team will respond to you as soon as possible. We're here to help you succeed!</p>
+                    <p>Fill out the form below and our expert team will respond to you as soon as possible. We're here
+                        to help you succeed!</p>
                 </div>
-                
+
                 <form id="contactForm" novalidate>
                     <div class="form-row">
                         <div class="form-group">
@@ -1469,7 +1517,7 @@
                             <div class="error-text">Please enter your last name</div>
                         </div>
                     </div>
-                    
+
                     <div class="form-row">
                         <div class="form-group">
                             <label for="email" class="form-label">Email Address *</label>
@@ -1482,7 +1530,7 @@
                             <div class="error-text">Please enter your phone number</div>
                         </div>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="course" class="form-label">Course of Interest</label>
                         <select id="course" name="course" class="form-select">
@@ -1500,13 +1548,15 @@
                             <option value="general">General Inquiry</option>
                         </select>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="message" class="form-label">Message *</label>
-                        <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your goals, questions, or how we can help you achieve your tech career dreams..." required></textarea>
+                        <textarea id="message" name="message" class="form-textarea"
+                            placeholder="Tell us about your goals, questions, or how we can help you achieve your tech career dreams..."
+                            required></textarea>
                         <div class="error-text">Please enter your message</div>
                     </div>
-                    
+
                     <button type="submit" class="submit-btn" id="submitBtn">
                         <i class="fas fa-paper-plane"></i>
                         <span>Send Message</span>
@@ -1604,9 +1654,10 @@
     <section class="locations-section">
         <div class="section-header">
             <h2>Our <span class="highlight">Locations</span></h2>
-            <p>Visit us at our state-of-the-art campuses in USA and Nigeria, equipped with cutting-edge technology and learning facilities</p>
+            <p>Visit us at our state-of-the-art campuses in USA and Nigeria, equipped with cutting-edge technology and
+                learning facilities</p>
         </div>
-        
+
         <div class="locations-grid">
             <!-- USA Headquarters -->
             <div class="location-card">
@@ -1615,7 +1666,7 @@
                     <h3 class="location-title">USA Headquarters</h3>
                     <p class="location-subtitle">Our main campus and global headquarters</p>
                 </div>
-                
+
                 <div class="location-content">
                     <div class="location-address">
                         <div class="address-item">
@@ -1628,7 +1679,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="contact-methods">
                         <a href="tel:+15551234567" class="contact-method">
                             <i class="fas fa-phone"></i>
@@ -1647,7 +1698,7 @@
                             <span>500+ Students Enrolled</span>
                         </div>
                     </div>
-                    
+
                     <div class="location-map" onclick="openMap('usa')">
                         <div class="map-content">
                             <i class="fas fa-map-marked-alt"></i>
@@ -1664,7 +1715,7 @@
                     <h3 class="location-title">Nigeria Campus</h3>
                     <p class="location-subtitle">Our African hub in Lagos</p>
                 </div>
-                
+
                 <div class="location-content">
                     <div class="location-address">
                         <div class="address-item">
@@ -1676,7 +1727,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="contact-methods">
                         <a href="tel:+2348001234567" class="contact-method">
                             <i class="fas fa-phone"></i>
@@ -1699,7 +1750,7 @@
                             <span>1000+ Students Enrolled</span>
                         </div>
                     </div>
-                    
+
                     <div class="location-map" onclick="openMap('nigeria')">
                         <div class="map-content">
                             <i class="fas fa-map-marked-alt"></i>
@@ -1715,8 +1766,9 @@
     <section class="quick-contact">
         <div class="quick-contact-content">
             <h2>Need Immediate <span class="highlight">Assistance?</span></h2>
-            <p>Don't wait! Our admission counselors are standing by to help you choose the perfect tech career path. Get instant support through your preferred communication channel.</p>
-            
+            <p>Don't wait! Our admission counselors are standing by to help you choose the perfect tech career path. Get
+                instant support through your preferred communication channel.</p>
+
             <div class="quick-buttons">
                 <a href="tel:+2348001234567" class="quick-btn quick-btn-primary">
                     <i class="fas fa-phone"></i>
@@ -1754,16 +1806,18 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Bloomy Technologies</h3>
-                <p>Leading tech training institute with campuses in USA and Nigeria. Transforming careers through world-class technology education since 2021.</p>
+                <p>Leading tech training institute with campuses in USA and Nigeria. Transforming careers through
+                    world-class technology education since 2021.</p>
                 <div class="social-links">
                     <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
                     <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.instagram.com/bloomytechnologies_ikeja?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/bloomytechnologies_ikeja?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                        title="Instagram"><i class="fab fa-instagram"></i></a>
                     <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
-            
+
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
@@ -1775,7 +1829,7 @@
                     <li><a href="#blog">Blog</a></li>
                 </ul>
             </div>
-            
+
             <div class="footer-section">
                 <h3>Popular Courses</h3>
                 <ul>
@@ -1787,7 +1841,7 @@
                     <li><a href="training.html#ui-ux">UI/UX Design</a></li>
                 </ul>
             </div>
-            
+
             <div class="footer-section">
                 <h3>Contact Info</h3>
                 <p><i class="fas fa-map-marker-alt"></i> Headquarters: USA</p>
@@ -1798,7 +1852,7 @@
                 <p><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 6:00 PM</p>
             </div>
         </div>
-        
+
         <div class="footer-bottom">
             <p>&copy; 2025 Bloomy Technologies. All rights reserved.</p>
             <div class="footer-links">
@@ -1812,12 +1866,12 @@
 
     <script>
         // Enhanced JavaScript functionality
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Header scroll effect
             const header = document.getElementById('header');
             const scrollTop = document.getElementById('scrollTop');
-            
-            window.addEventListener('scroll', function() {
+
+            window.addEventListener('scroll', function () {
                 if (window.scrollY > 100) {
                     header.classList.add('scrolled');
                     scrollTop.classList.add('show');
@@ -1828,7 +1882,7 @@
             });
 
             // Smooth scroll for scroll-to-top button
-            scrollTop.addEventListener('click', function(e) {
+            scrollTop.addEventListener('click', function (e) {
                 e.preventDefault();
                 window.scrollTo({
                     top: 0,
@@ -1847,11 +1901,11 @@
             function validateForm() {
                 let isValid = true;
                 const formGroups = contactForm.querySelectorAll('.form-group');
-                
+
                 formGroups.forEach(group => {
                     const input = group.querySelector('input, textarea, select');
                     const isRequired = input.hasAttribute('required');
-                    
+
                     if (isRequired && !input.value.trim()) {
                         group.classList.add('error');
                         group.classList.remove('success');
@@ -1867,7 +1921,7 @@
                         }
                     }
                 });
-                
+
                 return isValid;
             }
 
@@ -1879,10 +1933,10 @@
             // Real-time validation
             const inputs = contactForm.querySelectorAll('input, textarea, select');
             inputs.forEach(input => {
-                input.addEventListener('blur', function() {
+                input.addEventListener('blur', function () {
                     const group = this.closest('.form-group');
                     const isRequired = this.hasAttribute('required');
-                    
+
                     if (isRequired && !this.value.trim()) {
                         group.classList.add('error');
                         group.classList.remove('success');
@@ -1897,7 +1951,7 @@
                     }
                 });
 
-                input.addEventListener('input', function() {
+                input.addEventListener('input', function () {
                     const group = this.closest('.form-group');
                     if (group.classList.contains('error') && this.value.trim()) {
                         group.classList.remove('error');
@@ -1909,48 +1963,48 @@
             });
 
             // Form submission
-            contactForm.addEventListener('submit', function(e) {
+            contactForm.addEventListener('submit', function (e) {
                 e.preventDefault();
-                
+
                 // Hide previous messages
                 successMessage.classList.remove('show');
                 errorMessage.classList.remove('show');
-                
+
                 if (!validateForm()) {
                     return;
                 }
-                
+
                 // Show loading state
                 submitBtn.classList.add('loading');
                 submitBtn.disabled = true;
                 loadingOverlay.classList.add('show');
-                
+
                 // Simulate API call
-                setTimeout(function() {
+                setTimeout(function () {
                     // Hide loading state
                     submitBtn.classList.remove('loading');
                     submitBtn.disabled = false;
                     loadingOverlay.classList.remove('show');
-                    
+
                     // Show success message
                     successMessage.classList.add('show');
-                    
+
                     // Reset form
                     contactForm.reset();
                     const formGroups = contactForm.querySelectorAll('.form-group');
                     formGroups.forEach(group => {
                         group.classList.remove('error', 'success');
                     });
-                    
+
                     // Scroll to success message
                     successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    
+
                 }, 2000);
             });
 
             // Mobile menu functionality
             const mobileMenu = document.getElementById('mobileMenu');
-            mobileMenu.addEventListener('click', function() {
+            mobileMenu.addEventListener('click', function () {
                 // Add mobile menu functionality here
                 console.log('Mobile menu clicked');
             });
@@ -1961,7 +2015,7 @@
                 rootMargin: '0px 0px -50px 0px'
             };
 
-            const observer = new IntersectionObserver(function(entries) {
+            const observer = new IntersectionObserver(function (entries) {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.style.animationPlayState = 'running';
@@ -1977,7 +2031,7 @@
 
             // Auto-hide messages after 10 seconds
             function autoHideMessage(element) {
-                setTimeout(function() {
+                setTimeout(function () {
                     element.classList.remove('show');
                 }, 10000);
             }
@@ -1985,11 +2039,11 @@
             // Enhanced form interactions
             const formInputs = document.querySelectorAll('.form-input, .form-textarea, .form-select');
             formInputs.forEach(input => {
-                input.addEventListener('focus', function() {
+                input.addEventListener('focus', function () {
                     this.parentElement.style.transform = 'translateY(-2px)';
                 });
-                
-                input.addEventListener('blur', function() {
+
+                input.addEventListener('blur', function () {
                     this.parentElement.style.transform = 'translateY(0)';
                 });
             });
@@ -2006,7 +2060,7 @@
         // Map functionality
         function openMap(location) {
             let coordinates, name;
-            
+
             if (location === 'usa') {
                 coordinates = '37.4419,122.1430'; // Silicon Valley coordinates
                 name = 'Bloomy Technologies HQ, Silicon Valley';
@@ -2014,7 +2068,7 @@
                 coordinates = '6.6018,3.3515'; // Lagos coordinates
                 name = 'Bloomy Technologies Nigeria, Lagos';
             }
-            
+
             const mapURL = `https://maps.app.goo.gl/9mrptJSaJNZpCvDY7`;
             window.open(mapURL, '_blank');
         }
@@ -2027,10 +2081,10 @@
         }
 
         // Enhanced scroll effects
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const scrolled = window.pageYOffset;
             const parallaxElements = document.querySelectorAll('.page-header::before');
-            
+
             parallaxElements.forEach(element => {
                 const speed = 0.5;
                 element.style.transform = `translateY(${scrolled * speed}px)`;
@@ -2044,33 +2098,33 @@
         }
 
         // Add event listeners for form analytics
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const formElements = document.querySelectorAll('#contactForm input, #contactForm textarea, #contactForm select');
-            
+
             formElements.forEach(element => {
-                element.addEventListener('focus', function() {
+                element.addEventListener('focus', function () {
                     trackFormInteraction('field_focus', this.name);
                 });
-                
-                element.addEventListener('blur', function() {
+
+                element.addEventListener('blur', function () {
                     if (this.value) {
                         trackFormInteraction('field_complete', this.name);
                     }
                 });
             });
-            
-            document.getElementById('contactForm').addEventListener('submit', function() {
+
+            document.getElementById('contactForm').addEventListener('submit', function () {
                 trackFormInteraction('form_submit', 'contact_form');
             });
         });
 
         // Keyboard navigation support
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
             // Escape key closes mobile menu if open
             if (e.key === 'Escape') {
                 // Close mobile menu logic here
             }
-            
+
             // Enter key on WhatsApp float button
             if (e.key === 'Enter' && e.target.classList.contains('whatsapp-float')) {
                 openWhatsApp('Keyboard Navigation');
@@ -2084,15 +2138,15 @@
 
         if (isTouchDevice()) {
             document.body.classList.add('touch-device');
-            
+
             // Enhance touch interactions
             const touchElements = document.querySelectorAll('.info-card, .location-card, .quick-btn');
             touchElements.forEach(element => {
-                element.addEventListener('touchstart', function() {
+                element.addEventListener('touchstart', function () {
                     this.style.transform = 'scale(0.98)';
                 });
-                
-                element.addEventListener('touchend', function() {
+
+                element.addEventListener('touchend', function () {
                     this.style.transform = '';
                 });
             });
@@ -2103,7 +2157,7 @@
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
             deferredPrompt = e;
-            
+
             // Show install button if needed
             const installButton = document.getElementById('installButton');
             if (installButton) {
@@ -2134,18 +2188,18 @@
         }
 
         // Error handling for failed requests
-        window.addEventListener('error', function(e) {
+        window.addEventListener('error', function (e) {
             console.error('Global error:', e.error);
             // You could send error reports to a logging service here
         });
 
         // Performance monitoring
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             // Monitor page load performance
             if ('performance' in window) {
                 const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
                 console.log('Page load time:', loadTime + 'ms');
-                
+
                 // You could send this data to analytics
                 if (loadTime > 3000) {
                     console.warn('Page load time is slow');
@@ -2154,7 +2208,7 @@
         });
 
         // Accessibility enhancements
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Add skip link functionality
             const skipLink = document.createElement('a');
             skipLink.href = '#main-content';
@@ -2172,33 +2226,33 @@
                 z-index: 10000;
                 transition: top 0.3s;
             `;
-            
-            skipLink.addEventListener('focus', function() {
+
+            skipLink.addEventListener('focus', function () {
                 this.style.top = '6px';
             });
-            
-            skipLink.addEventListener('blur', function() {
+
+            skipLink.addEventListener('blur', function () {
                 this.style.top = '-40px';
             });
-            
+
             document.body.insertBefore(skipLink, document.body.firstChild);
-            
+
             // Add main content landmark
             const contactSection = document.querySelector('.contact-section');
             if (contactSection) {
                 contactSection.id = 'main-content';
                 contactSection.setAttribute('role', 'main');
             }
-            
+
             // Enhance focus management
             const focusableElements = document.querySelectorAll('a, button, input, textarea, select');
             focusableElements.forEach(element => {
-                element.addEventListener('focus', function() {
+                element.addEventListener('focus', function () {
                     this.style.outline = '3px solid var(--primary)';
                     this.style.outlineOffset = '2px';
                 });
-                
-                element.addEventListener('blur', function() {
+
+                element.addEventListener('blur', function () {
                     this.style.outline = '';
                     this.style.outlineOffset = '';
                 });
@@ -2206,7 +2260,7 @@
         });
 
         // Print styles support
-        window.addEventListener('beforeprint', function() {
+        window.addEventListener('beforeprint', function () {
             // Hide unnecessary elements when printing
             const elementsToHide = document.querySelectorAll('.whatsapp-float, .scroll-top, .nav-cta');
             elementsToHide.forEach(element => {
@@ -2214,7 +2268,7 @@
             });
         });
 
-        window.addEventListener('afterprint', function() {
+        window.addEventListener('afterprint', function () {
             // Restore elements after printing
             const elementsToShow = document.querySelectorAll('.whatsapp-float, .scroll-top, .nav-cta');
             elementsToShow.forEach(element => {
@@ -2223,4 +2277,5 @@
         });
     </script>
 </body>
+
 </html>
